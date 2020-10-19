@@ -22,9 +22,22 @@
     </style>
 </head>
 <body>
-    <audio src="merrygomoof.mp3" autoplay loop></audio>
+    <iframe src="merrygomoof.mp3" allow="autoplay" style="display:none" loop="true" id="iframeAudio">
+    </iframe>     
+    <audio src="merrygomoof.mp3" autoplay loop id="playAudio"></audio>
     <div class="page-wrapper">
         <img src="dogcow.jpg" alt="Dogcow">
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script>
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome){
+            $('#iframeAudio').remove()
+        }
+        else {
+            $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+        }
+    </script>
 </body>
 </html>
