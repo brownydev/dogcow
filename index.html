@@ -18,6 +18,7 @@
         }
         img {
             width: 50vh;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -25,8 +26,10 @@
     <iframe src="merrygomoof.mp3" allow="autoplay" style="display:none" loop="true" id="iframeAudio">
     </iframe>     
     <audio src="merrygomoof.mp3" autoplay loop id="playAudio"></audio>
+    <audio src="dogcow.mp3" id="dogcowAudio"></audio>
+    
     <div class="page-wrapper">
-        <img src="dogcow.jpg" alt="Dogcow">
+        <img src="dogcow.jpg" class="dogcow" alt="Dogcow">
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
@@ -38,6 +41,9 @@
         else {
             $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
         }
+        $('.dogcow').click(function(){
+            $('#dogcowAudio')[0].play();
+        })
     </script>
 </body>
 </html>
